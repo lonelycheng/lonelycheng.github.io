@@ -1,20 +1,16 @@
-<!-- Page Content -->
-<div id="page-content-wrapper">
-    <div class="container-fluid" id="post-content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="page-header">
-                    <h1 class="text-danger">
-                        {{ page.title }}
-                    </h1>
-                    {{ page.date | date: "%Y-%m-%d" }}
-                </div>
-                {{ page.content | markdownify }}
 
-                <!-- don't delete this div as this is header collapse end identified  -->
-                <div id="content-end"></div>
-            </div>
-
-        </div>
-    </div>
-<!-- /#page-content-wrapper -->
+<div id="posts" class="posts-expand">
+  {% assign post = page %}
+  {% include _macro/post.html %}
+  <div class="post-spread">
+    {% if site.jiathis %}
+      {% include _partials/share/jiathis.html %}
+    {% elsif site.baidushare %}
+      {% include _partials/share/baidushare.html %}
+    {% elsif site.add_this_id %}
+      {% include _partials/share/add-this.html %}
+    {% elsif site.duoshuo_shortname and site.duoshuo_share %}
+      {% include _partials/share/duoshuo_share.html %}
+    {% endif %}
+  </div>
+</div>
