@@ -6,7 +6,7 @@ paginate_path: /blog/page:num #makes pagination working
 
 # header text
 title: C wei
-header: 他们只会跟你喝红酒，真的出事没人伸援手。
+header: Hello sucker.
 
 # for welcome page
 # to replace image go to index.html
